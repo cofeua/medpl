@@ -7,6 +7,7 @@ sudo usermod -a -G www-data vagrant
 sudo apt-get update
 
 sudo apt-get -y install git
+sudo apt-get -y install mc
 
 sudo apt-get -y install nginx
 
@@ -45,6 +46,7 @@ sudo echo 'server {
     server_name $srvnm;
     root $web;
 
+    sendfile off;
     charset $charset;
 
     location / {

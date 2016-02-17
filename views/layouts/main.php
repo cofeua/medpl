@@ -24,6 +24,64 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
+    <div class="top">
+        <div class="wrapper">
+             <?php
+                NavBar::begin([
+                    'brandLabel' => 'Medpolis',
+                    'brandUrl' => Yii::$app->homeUrl,
+                    'options' => [
+                        'class' => 'navbar navbar-fixed-top',
+                    ],
+                ]);
+                echo Nav::widget([
+                    'options' => ['class' => 'navbar-nav '],
+                    'items' => [
+                        ['label' => 'Home', 'url' => ['/site/index']],
+                        ['label' => 'About', 'url' => ['/site/about']],
+                        ['label' => 'Contact', 'url' => ['/site/contact']],
+                        Yii::$app->user->isGuest ?
+                            ['label' => 'Login', 'url' => ['/site/login']] :
+                            [
+                                'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
+                                'url' => ['/site/logout'],
+                                'linkOptions' => ['data-method' => 'post']
+                            ],
+                    ],
+                ]);
+                NavBar::end();
+                ?>
+            
+        </div>
+    </div>
+    <div class="mainmenu">
+        <div class="wrapper">
+            <?php
+                NavBar::begin();
+                echo Nav::widget([
+                    'options' => ['class' => 'navbar-nav '],
+                    'items' => [
+                        ['label' => 'О ДМС', 'url' => ['/site/index']],
+                        ['label' => 'Простые программы', 'url' => ['/site/simple-programs']],
+                        ['label' => 'Индивидуальные программы', 'url' => ['/site/privat-programs']],
+                        ['label' => 'Семейные программы', 'url' => ['/site/family-programs']],
+                        ['label' => 'Нестандартные условия', 'url' => ['/site/other-programs']],
+                         /* Yii::$app->user->isGuest ?
+                            ['label' => 'Login', 'url' => ['/site/login']] :
+                            [
+                                'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
+                                'url' => ['/site/logout'],
+                                'linkOptions' => ['data-method' => 'post']
+                            ],*/
+                    ],
+                ]);
+                NavBar::end();
+                ?>
+            
+        
+        </div>    
+    </div>
+
  <?= $content ?>
     
 <footer class="footer">

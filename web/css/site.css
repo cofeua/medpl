@@ -3,11 +3,14 @@ body {
     height: 100%;
 }
 
-.wrap {
+.wrapper {
     min-height: 100%;
     height: auto;
     margin: 0 auto -60px;
     padding: 0 0 60px;
+    width: 75%;
+    max-width: 1024px;
+    
 }
 
 .wrap > .container {
@@ -88,4 +91,10 @@ a.desc:after {
     border-left: 3px solid #eed3d7;
     padding: 10px 20px;
     margin: 0 0 15px 0;
+}
+/* ************************** */
+
+.navbar-default {
+    border: none;
+    background-color: white;
 }
