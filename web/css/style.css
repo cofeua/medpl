@@ -1,0 +1,50 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 18.02.2016, 14:07:02
+    Author     : ViktorZ
+*/
+
+#topmenu.navbar-default .navbar-brand {
+    color: rgba(119, 119, 119, 1);
+    height: 108px;
+}
+#topmenu.navbar-default {
+    font-size: 14px;
+    background-color: rgba(18, 61, 114, 1);
+    border-bottom-width: 1px;
+}
+#topmenu.navbar-default .navbar-nav>li>a {
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(18, 61, 114, 1);
+}
+#topmenu.navbar-default .navbar-nav>li>a:hover,
+#topmenu.navbar-default .navbar-nav>li>a:focus {
+    color: rgba(255, 255, 255, 1);
+  background-color: rgba(18, 61, 114, 1);
+}
+#topmenu.navbar-default .navbar-nav>.active>a,
+#topmenu.navbar-default .navbar-nav>.active>a:hover,
+#topmenu.navbar-default .navbar-nav>.active>a:focus {
+    color: rgba(85, 85, 85, 1);
+    background-color: rgba(18, 61, 114, 1);
+}
+#topmenu.navbar-default .navbar-toggle {
+    border-color: #123d72;
+    display: none;
+}
+#topmenu.navbar-default .navbar-toggle:hover,
+#topmenu.navbar-default .navbar-toggle:focus {
+    background-color: #123d72;
+}
+#topmenu.navbar-default .navbar-toggle .icon-bar {
+    background-color: #123d72;
+}
+#topmenu.navbar-default .navbar-toggle:hover .icon-bar,
+#topmenu.navbar-default .navbar-toggle:focus .icon-bar {
+    background-color: #123d72;
+}
+

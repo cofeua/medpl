@@ -53,6 +53,7 @@ table {
 html,
 body {
     height: 100%;
+    font-family: 'PT Sans', sans-serif;
 }
 
 .wrapper {
@@ -73,17 +74,6 @@ body {
     padding-top: 20px;
 }
 
-/* add sorting icons to gridview sort links */
-a.asc:after, a.desc:after {
-    position: relative;
-    top: 1px;
-    display: inline-block;
-    font-family: 'Glyphicons Halflings';
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    padding-left: 5px;
-}
 
 a.asc:after {
     content: /*"\e113"*/ "\e151";
@@ -131,7 +121,13 @@ a.desc:after {
     background-color: #123d72;
     position: relative;
 }
-.logo:before{
+.logo {
+    display: block;
+    position: relative;
+}
+.logo>img{display: block; position: relative;}
+
+a.navbar-brand:before{
     display: block;
     position: absolute;
     top: 0;
@@ -141,11 +137,6 @@ a.desc:after {
     width: 298px;
     height: 108px;
 }
-.logo {
-    padding: 14px;
-    position: relative;
-}
-.logo>img{display: block; position: relative;}
 
 
 .navbar {
@@ -154,4 +145,57 @@ a.desc:after {
 }
 .navbar-brand {
     padding: 20px;
+}
+.phone_top:before {
+    content: "";
+    height: 30px;
+    width: 30px;
+    background: url('/images/phone.png') no-repeat;
+    border-radius: 100%;
+    background-color: #0c5596;
+    position: absolute;
+    top: -2px;
+    left: -45px;
+    background-position: center;
+}
+.phone_top:after {
+}
+
+.opened {
+    display: block;
+    text-align: right;
+    font-size: 9px;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
+.phone_top {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 28px;
+    position: relative;
+}
+
+#topmenu .nav > li > a {
+    padding: 30px 25px;
+}
+#mainmenu > li > a {
+    padding: 10px 25px;
+    color: #113d73;
+}
+#mainmenu > li:hover > a {
+    color: #008ee6;
+}
+
+#mainmenu  .active > a {
+    background: white;
+}
+#mainmenu  li {
+    border-bottom: 2px solid white;
+}
+#mainmenu  li.active {
+    border-bottom: 2px solid #113d73;
+}
+
+.navbar-form .btn, .navbar-form  .form-control {
+     border-radius: 34px;   
 }

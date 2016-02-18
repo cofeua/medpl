@@ -17,6 +17,7 @@ AppAsset::register($this);
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
@@ -27,8 +28,53 @@ AppAsset::register($this);
     <div class="top">
         <div class="wrapper">
              <?php
-             echo '<div class="logo">'.Html::img('@web/images/logo.png',['alt'=>Yii::$app->name]).'</div>';
-             ?>
+                NavBar::begin([
+                    'brandLabel' => Html::img('@web/images/logo.png',['alt'=>Yii::$app->name,'class'=>'logo']),
+                    'brandUrl' => Yii::$app->homeUrl,
+                    'brandOptions'=>[
+                        'class' => 'navbar-brand',
+                    ],
+                    'renderInnerContainer' => false,
+                    'innerContainerOptions' => [
+                        'class'=> 'container',
+                    ],
+                    'options' => [
+                        'class' => 'navbar-default',
+                        'id'=>'topmenu',
+                    ],
+                ]);
+    
+            $searchform = '<form class="navbar-form" role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                    </div>
+                </div>
+                </form>';
+
+            echo Nav::widget([
+                'options' => ['class' => 'navbar-nav navbar-right'],
+                'encodeLabels'=>false,
+                'items' => [
+                    ['label' => '<span class="phone_top">(067) 999-99-99</span>'
+                        .       '<span class="opened">Пн-Пт, 9:00-18:00</span>',
+                     'url' => false
+                    ],
+                    ['label' => $searchform ,
+                     'url' => false
+                    ],
+                    [
+                    'label' => 'Русский',
+                    'items' => [
+                             ['label' => 'Українська', 'url' => '#'],
+                             ['label' => 'English', 'url' => '#'],
+                        ],
+                    ],
+                ],
+            ]); 
+            NavBar::end();
+            ?>
             
         </div>
     </div>
@@ -37,7 +83,7 @@ AppAsset::register($this);
             <?php
                 NavBar::begin();
                 echo Nav::widget([
-                    'options' => ['class' => 'navbar-nav '],
+                    'options' => ['class' => 'navbar-nav', 'id'=>'mainmenu'],
                     'items' => [
                         ['label' => 'О ДМС', 'url' => ['/site/index']],
                         ['label' => 'Простые программы', 'url' => ['/site/simple-programs']],
