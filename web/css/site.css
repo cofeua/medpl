@@ -1,16 +1,65 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+/*                        ******                           */
 html,
 body {
     height: 100%;
 }
 
 .wrapper {
-    min-height: 100%;
-    height: auto;
-    margin: 0 auto -60px;
-    padding: 0 0 60px;
+    margin: 0 auto;
     width: 75%;
     max-width: 1024px;
-    
+    position: relative;
 }
 
 .wrap > .container {
@@ -22,21 +71,6 @@ body {
     background-color: #f5f5f5;
     border-top: 1px solid #ddd;
     padding-top: 20px;
-}
-
-.jumbotron {
-    text-align: center;
-    background-color: transparent;
-}
-
-.jumbotron .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-}
-
-.not-set {
-    color: #c55;
-    font-style: italic;
 }
 
 /* add sorting icons to gridview sort links */
@@ -93,8 +127,31 @@ a.desc:after {
     margin: 0 0 15px 0;
 }
 /* ************************** */
+.top {
+    background-color: #123d72;
+    position: relative;
+}
+.logo:before{
+    display: block;
+    position: absolute;
+    top: 0;
+    content: "";
+    left: -170px;
+    background: url('/images/bg_header.jpg') no-repeat;
+    width: 298px;
+    height: 108px;
+}
+.logo {
+    padding: 14px;
+    position: relative;
+}
+.logo>img{display: block; position: relative;}
 
-.navbar-default {
+
+.navbar {
     border: none;
     background-color: white;
+}
+.navbar-brand {
+    padding: 20px;
 }
